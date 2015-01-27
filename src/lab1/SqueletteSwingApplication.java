@@ -208,8 +208,8 @@ public class SqueletteSwingApplication extends JFrame implements ActionListener 
 			 * nulle, on la dessine
 			 */
 			// for(int k= 0; k< 10 ; k++ ){
-			for (Forme input : list) {
-			//for (Object input : ListFormes) {
+			//for (Forme input : list) {
+			for (Object input : ListFormes) {
 
 				if (input != null) {
 					// faire un cast (transtypage) en Graphics2D depour avoir
@@ -486,43 +486,43 @@ public class SqueletteSwingApplication extends JFrame implements ActionListener 
 		while (this.Server.closing == true && this.workerActive) {
 
 			this.data.separateur(this.Server.read());
-		    list.add(FormeFactory.createForme(data.nom, data.coords));
-//			if ("<OVALE>".equals(this.data.form)
-//					|| "<CERCLE>".equals(this.data.form)) {
-//				Ellipse2D input = new Ellipse2D.Double(this.data.donne1,
-//						this.data.donne2, this.data.donne3, this.data.donne4);
-//				if (j < 10) {
-//					this.ListFormes.add(input);
-//					j++;
-//				} else {
-//					this.ListFormes.set(k, input);
-//					k++;
-//				}
-//			} else if ("<RECTANGLE>".equals(this.data.form)
-//					|| "<CARRE>".equals(this.data.form)) {
-//				Rectangle2D input = new Rectangle2D.Double(this.data.donne1,
-//						this.data.donne2, this.data.donne3, this.data.donne4);
-//				if (j < 10) {
-//					this.ListFormes.add(input);
-//					j++;
-//				} else {
-//					this.ListFormes.set(k, input);
-//					k++;
-//				}
-//			} else if ("<LIGNE>".equals(this.data.form)) {
-//				Line2D input = new Line2D.Double(this.data.donne1,
-//						this.data.donne2, this.data.donne3, this.data.donne4);
-//
-//				if (j < 10) {
-//					this.ListFormes.add(input);
-//					j++;
-//				} else {
-//					this.ListFormes.set(k, input);
-//					k++;
-//				}
-//			}
+//		    list.add(FormeFactory.createForme(data.nom, data.coords));
+			if ("<OVALE>".equals(this.data.form)
+					|| "<CERCLE>".equals(this.data.form)) {
+				Ellipse2D input = new Ellipse2D.Double(this.data.donne1,
+						this.data.donne2, this.data.donne3, this.data.donne4);
+				if (j < 10) {
+					this.ListFormes.add(input);
+					j++;
+				} else {
+					this.ListFormes.set(k, input);
+					k++;
+				}
+			} else if ("<RECTANGLE>".equals(this.data.form)
+					|| "<CARRE>".equals(this.data.form)) {
+				Rectangle2D input = new Rectangle2D.Double(this.data.donne1,
+						this.data.donne2, this.data.donne3, this.data.donne4);
+				if (j < 10) {
+					this.ListFormes.add(input);
+					j++;
+				} else {
+					this.ListFormes.set(k, input);
+					k++;
+				}
+			} else if ("<LIGNE>".equals(this.data.form)) {
+				Line2D input = new Line2D.Double(this.data.donne1,
+						this.data.donne2, this.data.donne3, this.data.donne4);
 
-			// }
+				if (j < 10) {
+					this.ListFormes.add(input);
+					j++;
+				} else {
+					this.ListFormes.set(k, input);
+					k++;
+				}
+			}
+
+			 //}
 			if (k > 9)
 				k = 0;
 			this.repaint();
